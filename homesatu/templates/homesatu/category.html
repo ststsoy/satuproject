@@ -1,0 +1,11 @@
+{%extends 'homesatu/index.html'%}
+{% load static %}
+
+    <h1>Сделал</h1>
+{% block cater %}
+{% for c in cater %}
+  <ul>
+  <h3><a  href="/category/get/{{c.id}}">{{c.name}}</a></h3>
+</ul>
+{%endfor%}
+{% endblock %}

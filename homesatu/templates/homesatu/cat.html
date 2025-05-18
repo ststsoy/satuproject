@@ -1,0 +1,43 @@
+
+{%extends 'homesatu/base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat</title>
+</head>
+<body>
+    <h2>cat</h2>
+    
+      
+
+  <li class="nav-item"><a class="nav-link" href="">{{cater.name}}</a></li>
+  {%block cat%}
+ 
+    <div class="bgred me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+
+          
+       {% for p in post %}
+    <div class="bgred me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <a class="icon-link" href="/homesatu/get/{{p.id}}"><h2 class="display-5">{{p.title}}</h2>  <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+        </a>
+        <p class="lead">{{p.content|linebreaks}}</p>
+        <img width="300" height="200" src="{{p.photo.url}}"/>  
+       {% endfor %}   
+        {% endblock %}
+
+          
+          
+
+     
+</div>
+     
+
+
+
+</body>
+</html>

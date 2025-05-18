@@ -1,0 +1,56 @@
+{%extends 'homesatu/base.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<body>
+   
+    {%block post%}
+ 
+    <div class="bgred me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+
+      	  
+        <a class="icon-link" href="/"><h2 class="display-5">{{post.title}}</h2>  <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+        </a>
+        <p class="lead">{{post.content|linebreaks}}</p>
+        <img width="300" height="200" src="{{post.photo.url}}"/> 
+
+          
+          
+
+     
+</div>
+     
+
+
+          
+      
+     {% for h in inv %}
+   <h2 class="display-5">{{h.title}}</h2>  
+        </a>
+        <p class="lead">{{h.content}}</p>
+        <div class="embed-responsive embed-responsive-4by3">
+  <!--<iframe class="embed-responsive-item" src="{{h.video.url}}"></iframe>-->
+   <video src="{{h.video.url}}" width="480" height="270" poster="poster.gif" controls />
+</div>
+            {% endfor %}
+        
+ 
+
+   
+        
+</div>
+     
+
+  {% endblock %}
+   
+
+
+</body>
+</html>
